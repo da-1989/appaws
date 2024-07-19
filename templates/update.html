@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Actualizar Producto</title>
+</head>
+
+<body>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+    <div class="PHONE SHOP">
+        <h1>Actualizar Producto</h1>
+        <form method="post" enctype="multipart/form-data">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" value="{{ producto.nombre }}" required><br>
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" required>{{ producto.descripcion }}</textarea><br>
+            <label for="precio">Precio:</label>
+            <input type="number" step="0.01" id="precio" name="precio" value="{{ producto.precio }}" required><br>
+            <label for="imagen">Imagen:</label>
+            <input type="file" id="imagen" name="imagen"><br>
+            <button type="submit">Actualizar</button>
+        </form>
+    </div>
+</body>
+
+</html>
